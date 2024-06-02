@@ -1,0 +1,2 @@
+alias xcc xclip -selection clipboard
+alias update sudo nixos-rebuild switch

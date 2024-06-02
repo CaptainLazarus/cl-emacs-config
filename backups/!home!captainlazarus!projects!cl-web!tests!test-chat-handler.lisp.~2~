@@ -1,0 +1,9 @@
+(defpackage :my-lisp-website.test-chat-handler
+  (:use :cl :lisp-unit))
+(in-package :my-lisp-website.test-chat-handler)
+
+(def-test test-sanitize-input
+  (assert-equal "hello world" (sanitize-input "hello\nworld")))
+
+(def-suite chat-handler-tests
+  test-sanitize-input)

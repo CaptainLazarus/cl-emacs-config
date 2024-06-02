@@ -1,0 +1,126 @@
+nmtui
+ls
+clear
+term
+exit
+cd projects/
+ls
+clear
+clear
+clear
+exit
+projects
+asdn
+as;dn
+clear
+exit
+nix build .
+ls
+xclip
+exit
+nix develop
+nix develop
+ls
+nix-shell
+exit
+z leetcode-python/
+z
+exit
+sudo nixos-rebuild switch
+make --version
+exit
+clear
+sudo nixos-rebuild switch
+sudo nixos-rebuild switch
+exit
+sudo nixos-rebuild switch
+clear
+exit
+nix-shell
+exit
+z lee
+z leetcode-python/
+exit
+asd
+ls
+$PATH
+python
+ls
+z
+source ~/.zshrc
+exit
+ls
+clear
+ls
+cd ..
+l
+cd ..
+ls
+z
+z leetcode-python/
+addpath
+z
+exit
+ls
+clear
+exit
+ls
+z
+exit
+ls
+mv copilot.el/ copilot
+ls
+exit
+update
+ll
+ll
+clear
+ll
+exit
+alias
+alias update "sudo nixos-rebuild switch"
+update
+alias xcc "xclip -selection clipboard"
+xcc
+echo $PATH | xcc
+exit
+nod
+node
+exit
+z
+pytest
+cd tests/
+ls
+ptest test_question.py:1
+pytest test_question.py:1
+pytest test_question.py
+pytest test_question.py::1
+pytest test_question.py:1
+pytest test_question.py::test_add
+nix develop
+nix develop  > xcc
+nix develop | xcc
+ls
+nix develop
+ls
+rm -rf .git/
+ls
+nix develop
+nix develop
+nix develop | xcc
+nix develop
+nix develop
+nix develop
+cd ..
+cd ..
+ls
+npm run dev
+npm run dev
+ls
+rm -rf .parcel-cache/
+ls
+npm run dev
+npm run dev
+git status
+npm run dev
+[1] npm run dev:parcel exited with code 0exit

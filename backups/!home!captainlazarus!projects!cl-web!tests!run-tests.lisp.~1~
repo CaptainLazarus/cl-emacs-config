@@ -1,0 +1,13 @@
+(defpackage :my-lisp-website.run-tests
+  (:use :cl :lisp-unit :my-lisp-website.test-chat-handler
+        :my-lisp-website.test-blog-handler :my-lisp-website.test-file-utils
+        :my-lisp-website.test-sanitizer))
+(in-package :my-lisp-website.run-tests)
+
+(defun run-all-tests ()
+  (run-tests 'chat-handler-tests)
+  (run-tests 'blog-handler-tests)
+  (run-tests 'file-utils-tests)
+  (run-tests 'sanitizer-tests))
+
+(run-all-tests)

@@ -1,0 +1,6 @@
+(ql:quickload "hunchentoot")
+(ql:quickload "my-lisp-website")
+
+(in-package :my-lisp-website)
+
+(start-server)

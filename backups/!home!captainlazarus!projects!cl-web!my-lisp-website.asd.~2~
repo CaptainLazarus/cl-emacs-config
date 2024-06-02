@@ -1,0 +1,12 @@
+(defsystem "my-lisp-website"
+  :description "A basic website in Common Lisp with messaging and blog features"
+  :author "Your Name <your.email@example.com>"
+  :license "MIT"
+  :version "0.1.0"
+  :depends-on ("hunchentoot" "cl-fad" "lisp-unit")
+  :components ((:file "src/main")
+               (:file "src/routes")
+               (:file "src/handlers/chat-handler")
+               (:file "src/handlers/blog-handler")
+               (:file "src/utils/file-utils")
+               (:file "src/utils/sanitizer")))

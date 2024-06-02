@@ -1,0 +1,101 @@
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (or (memq window-system '(mac ns x))
+            (daemonp))
+    (exec-path-from-shell-initialize)))
+
+(use-package recentf
+  :ensure nil
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-saved-items 100)
+  (add-hook 'after-init-hook 'recentf-cleanup)
+  (run-at-time nil (* 5 60) 'recentf-save-list))
+
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+(use-package counsel
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
+
+(use-package
+  racket-mode
+  :ensure t)
+
+(use-package
+  sicp
+  :ensure t)
+
+(use-package
+  multiple-cursors
+  :ensure t)
+
+(use-package persp-mode
+  :ensure (persp-mode :host github :repo "Bad-ptr/persp-mode.el") ; Use :ensure to ensure persp-mode is installed
+  :init
+  ;; Enable persp-mode globally
+  (setq wg-morph-on nil) ;; switch off animation
+  (setq persp-auto-resume-time 1.0)
+  (setq persp-nil-name "default")
+  (setq persp-auto-save-fname "auto-persp-save")
+  (setq persp-auto-save-opt 2)
+  (setq persp-is-ibc-as-f-supported nil)
+  (setq persp-kill-foreign-buffer-action 'kill)
+  (setq persp-save-dir (expand-file-name "persp-confs/" user-emacs-directory))
+  (setq persp-mode-prefix-key (kbd "C-c p")) ; Set the prefix key
+  (setq persp-suppress-no-prefix-key-warning t) ; Suppress the warning
+  :config
+  (persp-mode 1)) ; Moved persp-mode enablement to :config section
+
+(use-package persp-projectile
+  :ensure t
+  :after (persp-mode projectile)
+  :init
+  (setq persp-switch-project-action #'projectile-persp-switch-project)
+  :config
+  (add-hook 'after-init-hook #'(lambda () (persp-mode 1)))) ; Ensure persp-mode is enabled after init
+
+
+(use-package ob-racket
+  :ensure (ob-racket :host github :repo "hasu/emacs-ob-racket"))
+
+(use-package nix-mode
+  :ensure t
+  :mode "\\.nix\\'")
+
+(use-package js2-mode
+  :ensure t
+  :config
+  (add-hook 'js2-mode-hook (lambda ()
+                             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+
+(use-package dap-mode
+  :ensure t
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+
+(setq mc/list-file "~/.emacs.d/config/.mc-lists.el")
+
+(use-package lsp-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :config
+  (require 'dap-python)
+  (global-set-key (kbd "C-c r") 'lsp-find-references))
+
+(provide 'init-packages)

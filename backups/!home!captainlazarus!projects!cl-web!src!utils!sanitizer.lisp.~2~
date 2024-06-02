@@ -1,0 +1,7 @@
+(defpackage :my-lisp-website.sanitizer
+  (:use :cl))
+(in-package :my-lisp-website.sanitizer)
+
+(defun sanitize-input (input)
+  ;; Simple sanitization implementation
+  (substitute #\space #\newline input))

@@ -1,0 +1,50 @@
+;; -*- mode: emacs-lisp; eval: (progn (pp-buffer) (indent-buffer)) -*-
+((def-persp nil
+   ((def-buffer "init-bindings.el" "/home/captainlazarus/.emacs.d/config/init-bindings.el" emacs-lisp-mode)
+    (def-buffer "sicp.org" "/home/captainlazarus/projects/STC/sicp/sicp.org" org-mode)
+    (def-buffer "configuration.nix"
+      #("/sudo:root@nixos:/etc/nixos/configuration.nix" 6 10
+	(tramp-default t)
+	11 16
+	(tramp-default t))
+      nix-mode)
+    (def-buffer "init-packages.el" "/home/captainlazarus/.emacs.d/config/init-packages.el" emacs-lisp-mode)
+    (def-buffer "config" "~/.emacs.d/config/" dired-mode)
+    (def-buffer "repl.rkt" "/home/captainlazarus/.emacs.d/racket-mode/repl.rkt" racket-mode)
+    (def-buffer "sicp.desktop" "/home/captainlazarus/projects/STC/sicp/sicp.desktop" conf-desktop-mode))
+   (def-wconf
+     (((min-height . 4)
+       (min-width . 10)
+       (min-height-ignore . 3)
+       (min-width-ignore . 4)
+       (min-height-safe . 1)
+       (min-width-safe . 2)
+       (min-pixel-height . 68)
+       (min-pixel-width . 80)
+       (min-pixel-height-ignore . 51)
+       (min-pixel-width-ignore . 32)
+       (min-pixel-height-safe . 17)
+       (min-pixel-width-safe . 16))
+      leaf
+      (pixel-width . 1360)
+      (pixel-height . 710)
+      (total-width . 170)
+      (total-height . 41)
+      (normal-height . 1.0)
+      (normal-width . 1.0)
+      (buffer "init-bindings.el"
+	      (selected . t)
+	      (hscroll . 0)
+	      (fringes 8 8 nil nil)
+	      (margins nil)
+	      (scroll-bars nil 0 t nil 0 t nil)
+	      (vscroll . 0)
+	      (dedicated)
+	      (point . 615)
+	      (start . 1))
+      (prev-buffers
+       ("*scratch*" 1 1)
+       ("*scratch* (STC)" 1 1)
+       ("sicp.org" 6145 6725))))
+   (def-params nil)
+   t nil nil))

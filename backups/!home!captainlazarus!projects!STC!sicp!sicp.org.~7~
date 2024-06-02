@@ -1,0 +1,131 @@
+#+PROPERTY: header-args:racket :session *Racket REPL* :eval racket :results output
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (+ 12 23 11)
+#+END_SRC
+
+#+RESULTS:
+: 46
+  
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  1
+#+END_SRC
+  
+#+RESULTS:
+: 1
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (square x) (* x x))
+  (square 10)
+#+END_SRC
+
+#+RESULTS:
+: 100
+  
+  
+Ways to evaluate expression
+* Applicative model
+** Basically, solve the innermost expressions and expand upwards
+* Normal
+** Expand downwards, and then solve everything. Like a global flatten
+
+Word to know
+* Expression, Predicate, procedures, value, name
+* Special forms vs procedures
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  10
+  (+ 5 3 4)
+  (- 9 1)
+  (/ 6 2)
+  (+ (* 2 4) (- 4 6))
+#+END_SRC
+
+#+RESULTS:
+: 10
+: 12
+: 8
+: 3
+: 6
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define a 3)
+  (define b (+ a 1))
+  (+ a b (* a b))
+  (= a b)
+
+  (if (and (> b a) (< b (* a b)))
+      b
+      a)
+  (cond ((= a 4) 6)
+	((= b 4) (+ 6 7 a))
+	(else 25))
+
+  (+ 2 (if (> b a) b a))
+
+  (* (cond ((> a b) a)
+	   ((< a b) b)
+	   (else -1))
+     (+ a 1))
+#+END_SRC
+
+#+RESULTS:
+: 19
+: #f
+: 4
+: 16
+: 6
+: 16
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (- 1 2 3)
+  (- 1 (- 2 3))
+#+END_SRC
+
+#+RESULTS:
+: -4
+: 2
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+
+  (define (max a b) (if (> a b) a b))
+  (define (square a) (* a a))
+
+  (define
+    (largest-squares-sum a b c)
+    (if
+     (> a b)
+     (+ (square a) (square (max b c)))
+     (+ (square b) (square (max a c)))
+     ))
+  (largest-squares-sum 1 4 5)
+#+END_SRC
+
+#+RESULTS:
+: 41
+
+Exercise
+1.5: (define (p) (p)) -> Results in an infinte loop since it'll always call itself.
+So normal order evals the if and returns 0.
+Applicative evals the p and infinite loop.
+
+#+BEGIN_SRC racket :lang sicp :results output :exports both :eval no-export
+  (define (square x) (* x x))
+  (define (average x y)
+    (/ (+ x y) 2))
+
+  (define (good-enough? guess x)
+    (< (abs (- (square guess) x)) 0.001))
+
+  (define (improve guess x)
+    (average guess (/ x guess)))
+
+  (define (sqrt-iter guess x)
+    (if (good-enough? guess x)
+	guess
+	(sqrt-iter (improve guess x)
+		   x)))
+
+#+END_SRC
+
+#+RESULTS:

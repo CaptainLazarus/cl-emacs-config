@@ -1,0 +1,41 @@
+(setq org-confirm-babel-evaluate nil)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (emacs-lisp :tangle ./init.el . t)
+   (C . t)
+   (racket . t))
+ )
+
+(add-to-list 'org-src-lang-modes '("racket" . racket))
+
+;; Automatically enable racket-mode for Racket source blocks
+(defun my-org-mode-racket-setup ()
+  (when (string= (file-name-extension buffer-file-name) "org")
+    (org-edit-src-code)))
+
+(add-hook 'org-mode-hook 'my-org-mode-racket-setup)
+
+(add-hook 'racket-mode-hook
+          (lambda ()
+            (setq racket-indent-sequence-depth 0)
+            (setq racket-indent-curly-as-sequence t)))
+
+(defun my-org-babel-indent-src-blocks ()
+  "Auto-indent all source blocks in the current Org file."
+  (interactive)
+  (org-babel-map-src-blocks nil
+    (org-edit-src-code)
+    (indent-region (point-min) (point-max))
+    (org-edit-src-exit)))
+
+(add-hook 'before-save-hook 'my-org-babel-indent-src-blocks)
+
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (string= lang "racket")))  ;; Don't prompt for Racket code
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+
+
+(provide 'org-babel-config)

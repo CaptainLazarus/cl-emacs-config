@@ -1,0 +1,67 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue May 14 23:15:59 2024
+;; Desktop file format version 208
+;; Emacs version 28.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (26179 41815 949395 601000) (desktop . "208") "captainlazarus@nixos" nil nil ((((minibuffer . t) (display-type . mono) (background-mode . dark) (cursor-color . "white") (scroll-bar-foreground . "white") (menu-bar-lines . 0) (tool-bar-lines . 0) (vertical-scroll-bars) (foreground-color . "unspecified-fg") (background-color . "unspecified-bg") (font . "tty") (height . 25) (width . 80) (modeline . t) (unsplittable) (tab-bar-lines . 0) (frameset--id . "1C01-83BC-5CE9-F637") (frameset--mini t)) ((min-height . 8) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 2) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 8) (min-pixel-width . 10) (min-pixel-height-ignore . 4) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 2) (min-pixel-width-safe . 2)) vc (pixel-width . 80) (pixel-height . 24) (total-width . 80) (total-height . 24) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 80) (pixel-height . 12) (total-width . 80) (total-height . 12) (normal-height . 0.5) (normal-width . 1.0) (buffer "*scratch*" (selected . t) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 146) (start . 1))) (leaf (last . t) (pixel-width . 80) (pixel-height . 12) (total-width . 80) (total-height . 12) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Warnings*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 519) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '(#("/home/captainlazarus/.emacs.d/" 0 30 (ivy-index 1)) "~/projects/frontend/containers/Dashboard/pages/Investments/components/MfAccount/components/MfAccountCard/MfAccountCard.jsx" "~/.emacs.d/elpaca/repos/sicp-info/sicp.info" "~/.emacs.d/config/desktop-session-config.el" "~/.emacs" "~/projects/STC/sicp/sicp.org" "~/.emacs.d/racket-mode/repl.rkt" #("/sudo:root@nixos:/etc/nixos/configuration.nix" 6 10 (tramp-default t) 11 16 (tramp-default t)) "~/.emacs.d/config/init-packages.el" "~/.emacs.d/elpaca/repos/sicp-info/sicp.el" "~/.emacs.d/elpaca/repos/sicp-info/readme.org" "~/.emacs.d/config/init-core.el" "~/.emacs.d/config/backup-config.el" "~/.emacs.d/config/org-babel-config.el" "~/.config/i3/config" "~/.emacs.d/config/init-bindings.el" "~/.emacs.d/url/cookies" "~/sem.org" "~/projects/redux/examples/counter/src/features/counter/counterAPI.js" "~/projects/redux/examples/counter/src/features/counter/counterSlice.js" "~/projects/redux/examples/counter/src/features/counter/counterSlice.spec.js" "~/projects/redux/examples/universal/common/containers/App.js" "~/projects/redux/examples/universal/common/reducers/counter.js" "~/projects/redux/examples/universal/common/components/Counter.js" "~/projects/redux/examples/universal/server/server.js" "~/projects/redux/examples/counter/src/features/counter/Counter.js" "~/projects/redux/examples/counter/src/app/store.js" "~/projects/redux/examples/tree-view/src/generateTree.js" "~/projects/redux/examples/tree-view/src/containers/Node.js" "~/projects/redux/examples/tree-view/src/reducers/index.spec.js" "~/projects/redux/examples/tree-view/src/containers/Node.spec.js" "~/projects/redux/examples/tree-view/src/reducers/index.js" "~/projects/redux/examples/counter-ts/src/features/counter/Counter.tsx" "~/projects/redux/examples/counter-ts/src/app/store.ts" "~/projects/redux/test/combineReducers.spec.ts" "~/projects/redux/examples/counter/src/App.js" "~/projects/frontend/package-lock.json" "~/projects/STC/utils/books.org" "~/projects/STC/utils/mouse_nixos.org" "~/projects/frontend/containers/Calculators/components/SipCalculator.jsx" "~/projects/frontend/containers/Calculators/components/LifeInsurance/LifeInsurance.jsx" "~/projects/frontend/containers/Calculators/components/LifeInsurance/InsuranceCallCta/InsuranceCallCta.jsx" "~/projects/frontend/containers/Calculators/components/IncomeTax/components/InputsCon/ExempAndDed/ExempAndDed.jsx" "~/projects/frontend/containers/Calculators/components/IncomeTax/components/Overview/Overview.jsx" "~/projects/frontend/containers/Calculators/components/IncomeTax/components/InputsCon/SalaryIncome/SalaryIncome.jsx" "~/projects/frontend/containers/ReelsApp/pages/Profile/Profile.jsx" "~/projects/frontend/containers/ReelsApp/pages/Content/Content.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Strategy/components/Lumpsum/Lumpsum.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Strategy/components/EmergencyFund/EmergencyFund.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Recommended/components/RecommendationCard/RecommendationCard.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Strategy/components/TaxSaving/TaxSaving.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Recommended/components/LumpsumRebalance/LumpsumRebalance.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Strategy/components/LongTermSIP/LongTermSIP.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Strategy/Strategy.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/pages/Recommended/Recommended.jsx" "~/projects/frontend/containers/Dashboard/pages/ActionCenter/ActionCenter.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/Portfolio/Portfolio.jsx" "~/projects/frontend/containers/Dashboard/pages/SupportTicket/SupportTicket.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/Sips/Sips.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/MfOrders/components/OrdersList/OrdersList.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/ExploreFunds/components/AmountInput/AmountInput.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/ExploreFunds/components/SchemeList/SchemeList.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/ExploreFunds/components/MfSchemePage/MfSchemePage.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/ExploreFunds/components/SearchFilter/SearchFilter.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/components/Dashboard/Dashboard.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/pages/MutualFunds/MutualFunds.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/components/MfAccount/MfAccount.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/components/MfAccount/components/Kyc/components/VerifyIdentity.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/components/MfAccount/components/Kyc/components/Esign.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/components/MfAccount/components/InvestorProfile/components/WealthSource.jsx" "~/projects/frontend/containers/Dashboard/pages/Investments/Investments.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialProfile/pages/Retirement/Retirement.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialProfile/FinancialProfile.jsx" "~/projects/frontend/containers/Dashboard/pages/Settings/pages/BankDetails/BankDetails.jsx" "~/projects/frontend/containers/Dashboard/pages/Settings/pages/NomineeDetails/NomineeDetails.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/IncomeSaving/components/EmergengyFund/EmergengyFund.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/IncomeSaving/components/SavingRateCard/SavingRateCard.jsx" "~/projects/frontend/containers/Dashboard/pages/Settings/Settings.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/Goals/Goals.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/AssetsDebt/components/TotalAssets/TotalAssets.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/AssetsDebt/components/DebtToIncomeRatio/DebtToIncomeRatio.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/RiskManagement/components/LifeInsuranceCard/LifeInsuranceCard.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/pages/AssetsDebt/components/NetWorthCard/NetWorthCard.jsx" "~/projects/frontend/containers/Dashboard/pages/FinancialPlan/FinancialPlan.jsx" "~/projects/frontend/containers/Dashboard/components/Sidebar/Sidebar.jsx" "~/projects/frontend/containers/Dashboard/components/BottomNavigation/BottomNavigation.jsx" "~/projects/frontend/containers/Dashboard/components/MonthlyChecklist/MonthlyChecklist.jsx" "~/projects/frontend/containers/Dashboard/components/Navbar/Navbar.jsx" "~/projects/frontend/containers/Dashboard/components/MobileRest/pages/SupportTicketMob/SupportTicketMob.jsx" "~/projects/frontend/containers/ReelsApp/components/ContentCard/ContentCard.jsx" "~/projects/frontend/containers/ReelsApp/components/LoginModal/LoginModal.jsx" "~/projects/frontend/containers/ReelsApp/components/BookmarkContentModal/BookmarkContentModal.jsx" "~/projects/frontend/containers/Login/Login.jsx" "~/projects/frontend/containers/Calculators/components/Lumpsum.jsx" "~/projects/frontend/containers/Calculators/calculators.constants.js" "~/projects/frontend/containers/Calculators/CalculatorListPage/CalculatorListPage.jsx" "~/projects/frontend/pages/calculators/index.js" "~/projects/frontend/pages/calculators/[slug].js" "~/.ssh/config" "~/projects/backend/.env.uat"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/captainlazarus/.emacs.d/config/init-packages.el"
+  "init-packages.el"
+  'emacs-lisp-mode
+  '(eldoc-mode override-global-mode ivy-mode projectile-mode dap-mode persp-mode)
+  1363
+  '(1246 nil)
+  nil
+  nil
+  '((buffer-display-time 26179 41775 579388 747000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (795 540 638))))
+
+(desktop-create-buffer 208
+  "/home/captainlazarus/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(eldoc-mode override-global-mode ivy-mode projectile-mode dap-mode persp-mode)
+  139
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26179 38339 202043 646000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "config"
+  'dired-mode
+  '(override-global-mode ivy-mode projectile-mode dap-mode persp-mode)
+  201
+  '(nil nil)
+  t
+  '("/home/captainlazarus/.emacs.d/config/")
+  '((buffer-display-time 26179 38336 773847 830000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  ".emacs.d"
+  'dired-mode
+  '(override-global-mode ivy-mode projectile-mode dap-mode persp-mode)
+  454
+  '(nil nil)
+  t
+  '("/home/captainlazarus/.emacs.d/")
+  '((buffer-display-time 26179 38312 344265 186000))
+  '((mark-ring nil)))
+

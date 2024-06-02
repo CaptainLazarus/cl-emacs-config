@@ -1,0 +1,16 @@
+;; -*- mode: emacs-lisp; eval: (progn (pp-buffer) (indent-buffer)) -*-
+((def-persp nil
+   ((def-buffer ".emacs" "/home/captainlazarus/.emacs" emacs-lisp-mode)
+    (def-buffer "sicp.org" "/home/captainlazarus/projects/STC/sicp/sicp.org" org-mode)
+    (def-buffer "configuration.nix"
+      #("/sudo:root@nixos:/etc/nixos/configuration.nix" 6 10
+	(tramp-default t)
+	11 16
+	(tramp-default t))
+      nix-mode)
+    (def-buffer "config" "~/.emacs.d/config/" dired-mode)
+    (def-buffer "repl.rkt" "/home/captainlazarus/.emacs.d/racket-mode/repl.rkt" racket-mode)
+    (def-buffer "sicp.desktop" "/home/captainlazarus/projects/STC/sicp/sicp.desktop" conf-desktop-mode))
+   (def-wconf nil)
+   (def-params nil)
+   t nil nil))

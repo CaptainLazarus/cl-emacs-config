@@ -1,0 +1,14 @@
+(setq org-confirm-babel-evaluate nil)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (emacs-lisp :tangle ./init.el . t)
+   (C . t)
+   (racket . t))
+ )
+
+(setq org-babel-racket-command "racket")
+(setq org-babel-racket-init-script "(require sicp)")
+
+(provide 'org-babel-config)

@@ -1,0 +1,8 @@
+;; Enable desktop mode
+(desktop-save-mode 1)
+
+;; Set the location to save the desktop file
+(setq desktop-dirname "~/.emacs.d/desktop/")
+
+;; Save session automatically
+(setq desktop-auto-save-timeout 600) ;; Save every 10 minutes

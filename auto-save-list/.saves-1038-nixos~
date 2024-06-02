@@ -1,0 +1,2 @@
+/sudo:root@nixos:/etc/nixos/configuration.nix
+/tmp/#!sudo:root@nixos:!etc!nixos!configuration.nix#

@@ -1,0 +1,7 @@
+;;; Custom keybindings
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c d") (lambda ()
+                                (interactive)
+                                (delete-region (line-beginning-position) (line-beginning-position 2))))
+
+(provide 'init-bindings)

@@ -1,0 +1,56 @@
+(use-package recentf
+  :ensure nil
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-saved-items 100)
+  (add-hook 'after-init-hook 'recentf-cleanup)
+  (run-at-time nil (* 5 60) 'recentf-save-list))
+
+(use-package ivy
+  :ensure t
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+
+(use-package counsel
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x C-r") 'counsel-recentf))
+
+(use-package racket-mode)
+
+(elpaca (ob-racket . (:host github :repo "hasu/emacs-ob-racket")))
+
+(use-package ob-racket)
+
+(use-package nix-mode
+  :ensure t
+  :mode "\\.nix\\'")
+
+(use-package js2-mode
+  :config
+  (add-hook 'js2-mode-hook (lambda ()
+                             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+
+(use-package dap-mode
+  :ensure t
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+
+(use-package lsp-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :config
+  (require 'dap-python)
+  (global-set-key (kbd "C-c r") 'lsp-find-references))
+
+(provide 'init-packages)
