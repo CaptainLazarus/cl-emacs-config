@@ -59,11 +59,9 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "intel" ];
-    desktopManager = {
-      xterm.enable = false;
-    };
-    displayManager.defaultSession = "none+i3";
+    layout = "us";
+    xkbVariant = "";
+    # videoDrivers = [ "intel" ];
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
@@ -72,11 +70,18 @@
         i3lock
       ];
     };
-  };
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    desktopManager = {
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        noDesktop = true;
+        enableXfwm = false;
+      };
+    };
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "xfce+i3";
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -112,7 +117,11 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+    naturalScrolling = true;
+  };
+  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.captainlazarus = {
@@ -128,7 +137,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    libinput
+    libinput-gestures
+    xdotool
+    
     racket
+    vivaldi
     tmux
     vlc
     qbittorrent-qt5
@@ -148,8 +162,18 @@
     zsh
     oh-my-zsh
     ranger
-    openssl
+    touchegg
+    nyxt
+    mitschemeX11
+    blueberry
     sbcl
+    
+    clipit
+
+    openssl
+    openssl.dev
+    openssl.out
+
     ollama
     mermaid-cli
     python3
@@ -171,17 +195,35 @@
     gimp
   ];
 
-  environment.variables = {
-    MOZ_USER_XINPUT2 = "1"
-    LD_LIBRARY_PATH = "${pkgs.openssl.dev}/lib";
-  };
-
   services.emacs = {
     enable = true;
     package = pkgs.emacs;
   };
 
   services.flatpak.enable = true;
+
+  # systemd.services.libinput-gestures = {
+  #   description = "Libinput Gestures";
+  #   wantedBy = [ "multi-user.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures-setup start";
+  #     ExecStop = "${pkgs.libinput-gestures}/bin/libinput-gestures-setup stop";
+  #     Restart = "on-failure";
+  #   };
+  # };
+
+
+  # Check ~/.config/libinput-guestures.conf or something
+  systemd.services.libinput-gestures = {
+    description = "Libinput Gestures";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures-setup start";
+      ExecStop = "${pkgs.libinput-gestures}/bin/libinput-gestures-setup stop";
+      Restart = "on-failure";
+      Environment = "PATH=${pkgs.libinput-gestures}/bin:${pkgs.xdotool}/bin:/run/current-system/sw/bin";
+    };
+  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -226,6 +268,12 @@
 		  plugins = ["git" "z"];
 		  theme = "fino-time";
 		};
+  };
+
+  environment.variables = {
+    MOZ_USER_XINPUT2 = "1";
+    LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
+    abc = "xyz";
   };
 
   # This value determines the NixOS release from which the default

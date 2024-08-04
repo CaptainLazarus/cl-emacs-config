@@ -1,0 +1,17 @@
+(defun qa-server ()
+  "Start the question-answering server."
+  (interactive)
+  (let ((process (start-process "qa-server" "*QA Server*" "python" "qa_server.py")))
+    (set-process-filter process 'qa-server-output)))
+
+(defun qa-server-output (process output)
+  "Process the output from the question-answering server."
+  (message output))
+
+(defun ask-question ()
+  "Ask a question to the question-answering server."
+  (interactive)
+  (let ((question (read-string "Question: ")))
+    (call-process "echo" nil "*QA Server*" nil question)))
+
+(global-set-key (kbd "C-c q") 'ask-question)

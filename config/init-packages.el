@@ -89,4 +89,6 @@
   (require 'dap-python)
   (global-set-key (kbd "C-c r") 'lsp-find-references))
 
+(require 'email-config)
+
 (provide 'init-packages)

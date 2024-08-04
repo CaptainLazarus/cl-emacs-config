@@ -37,13 +37,6 @@
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
 
-;;; Startup settings
-;; Ensure Org is loaded first
-;; (use-package org
-;;   :config
-;;   (require 'org))
-;; (add-to-list 'load-path (expand-file-name "elpaca/repos/org/" user-emacs-directory))
-
 ;;; Interface settings
 (menu-bar-mode -1) ; Hide the menu bar
 (tool-bar-mode -1) ; Hide the tool bar
@@ -53,6 +46,10 @@
 (global-display-line-numbers-mode)
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+
+
+(set-default-coding-systems 'utf-8)
+(set-language-environment "UTF-8")
 
 (elpaca elpaca-use-package
   (elpaca-use-package-mode)

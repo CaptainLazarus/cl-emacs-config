@@ -37,7 +37,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
+ i18n.extraLocaleSettings = {
     LC_ALL = "en_US.UTF-8";
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -59,11 +59,9 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "intel" ];
-    desktopManager = {
-      xterm.enable = false;
-    };
-    displayManager.defaultSession = "none+i3";
+    layout = "us";
+    xkbVariant = "";
+    # videoDrivers = [ "intel" ];
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
@@ -72,11 +70,18 @@
         i3lock
       ];
     };
-  };
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    desktopManager = {
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        noDesktop = true;
+        enableXfwm = false;
+      };
+    };
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "xfce+i3";
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -112,7 +117,17 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+    # touchpad.naturalScrolling = true;
+    # touchpad.tapping = true;
+    # touchpad.scrollMethod = "twofinger";
+    # touchpad.disableWhileTyping = false;
+    # touchpad.clickMethod = "clickfinger";
+  };
+
+  # services.xserver.exportConfiguration = true;
+  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.captainlazarus = {
@@ -128,7 +143,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    libinput
+    libinput-gestures
+    xdotool
+    
     racket
+    vivaldi
     tmux
     vlc
     qbittorrent-qt5
@@ -148,8 +168,18 @@
     zsh
     oh-my-zsh
     ranger
-    openssl
+    xf86_input_wacom
+    nyxt
+    mitschemeX11
+    blueberry
     sbcl
+    
+    clipit
+
+    openssl
+    openssl.dev
+    openssl.out
+
     ollama
     mermaid-cli
     python3
@@ -169,12 +199,8 @@
     brightnessctl
     flameshot
     gimp
+    thefuck
   ];
-
-  environment.variables = {
-    MOZ_USER_XINPUT2 = "1";
-    LD_LIBRARY_PATH = "${pkgs.openssl.dev}/lib:${pkgs.glibc.out}/lib";
-  };
 
   services.emacs = {
     enable = true;
@@ -221,11 +247,19 @@
     shellInit = ''
           eval "$(direnv hook zsh)"
         '';
-    ohMyZsh = {
-			enable = true;
-		  plugins = ["git" "z"];
-		  theme = "fino-time";
-		};
+              autosuggestions.enable = true;
+          syntaxHighlighting.enable = true;
+          ohMyZsh = {
+            enable = true;
+            plugins = ["thefuck" "git" "sudo" "web-search" "copyfile" "copybuffer" "dirhistory" "history" "jsontools"];
+            theme = "jonathan";
+          };
+  };
+
+  environment.variables = {
+    MOZ_USER_XINPUT2 = "1";
+    LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
+    abc = "xyz";
   };
 
   # This value determines the NixOS release from which the default

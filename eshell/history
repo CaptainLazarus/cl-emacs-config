@@ -124,3 +124,4 @@ npm run dev
 git status
 npm run dev
 [1] npm run dev:parcel exited with code 0exit
+exit

@@ -1,0 +1,54 @@
+(gnus-group-change-level "nndraft:drafts" 1 9 nil t)
+(gnus-group-set-info '("nndraft:drafts" 1 nil nil (nndraft "")))
+(gnus-group-change-level "FaceBook" 3 9 nil nil)
+(gnus-group-set-info '("FaceBook" 3 nil nil nil nil))
+(gnus-group-change-level "INBOX" 3 9 nil nil)
+(gnus-group-change-level "Unroll.me" 3 9 nil nil)
+(gnus-group-set-info '("Unroll.me" 3 nil nil nil nil))
+(gnus-group-change-level "Unsubscribed Emails" 3 9 nil nil)
+(gnus-group-set-info '("Unsubscribed Emails" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/All Mail" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/All Mail" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/Drafts" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/Drafts" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/Important" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/Important" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/Sent Mail" 3 9 nil nil)
+(gnus-group-change-level "[Gmail]/Spam" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/Spam" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/Starred" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/Starred" 3 nil nil nil nil))
+(gnus-group-change-level "[Gmail]/Trash" 3 9 nil nil)
+(gnus-group-set-info '("[Gmail]/Trash" 3 nil nil nil nil))
+
+
+
+
+
+
+
+(gnus-server-set-info "archive" '(nnfolder "archive" (nnfolder-directory "~/Mail/archive") (nnfolder-active-file "~/Mail/archive/active") (nnfolder-get-new-mail nil) (nnfolder-inhibit-expiry t)))
+
+
+(setq gnus-topic-topology '(("Gnus" visible) (("misc" visible))))
+
+
+
+
+
+
+
+
+
+
+(gnus-group-change-level "[Gmail]/Sent Mail" 6 3 nil nil)
+(gnus-group-set-info '("[Gmail]/Sent Mail" 6 (1 . 1074) ((reply 36 65 (83 . 84) (99 . 100) 127 130 132 134 150 157 178 265 267 271 280 308 312 317 320 (329 . 330) 333 (335 . 337) 346 352 360 (367 . 369) 376 378 383 399 405 408 (412 . 413) 423 (429 . 430) 519 544 562 578 583 602 610 618 (639 . 640) 657 673 677 679 695 712 728 747 753 794 (832 . 833) 848 850 857 898 900 921 942 964 968 971 (979 . 980) 982 991 993 997 (1019 . 1022) 1031 1039 (1047 . 1048) 1054 1062) (tick 698 943 957 1045 (1048 . 1049)) (unexist (4 . 8) (15 . 18) 21 43 67 78 (97 . 98) 242 471 504 523 791 989 1018 1036 1052 (1066 . 1067))) nil ((modseq . "7377659") (uidvalidity . "600845544") (active 1 . 1074) (permanent-flags %Answered %Flagged %Draft %Deleted %Seen $NotPhishing $Phishing %*))))
+
+
+
+
+(gnus-group-set-info '("INBOX" 3 ((1 . 60252)) ((unexist) (seen 4704 5075 6789 11936 15318 15608 15611 (16722 . 16724) 16740 16883 16925 17038 17044 17114 17144 17270 17828 18042 18214 19815 20151 20226 20254 20267 20336 20417 20435 20452 20517 20695 21510 21534 21910 22755 23469 23810 24449 26427 26448 26484 26509 27174 27198 27961 28507 30232 30778 31016 31077 31084 31637 31667 31678 31682 31976 32030 32049 32052 32063 32116 32426 32952 33469 33471 33655 34189 34616 34618 35044 36509 36512 37292 37327 38485 39833 40342 40538 40767 41624 43538 43778 43825 44317 44848 44985 45049 46145 46959 47172 48285 52490 59741 60149 (60225 . 60226) (60229 . 60231) 60238 (60242 . 60245)) (reply (60139 . 60140) 60144 60149 60159 60163 (60199 . 60200) 60209 60223 60228 60240 60250) (tick 4704 5075 6789 11936 15318 15608 15611 (16722 . 16724) 16740 16883 16925 17038 17044 17114 17144 17270 17828 18042 18214 19815 20151 20226 20254 20267 20336 20417 20435 20452 20517 20695 21510 21534 21910 22755 23469 23810 24449 26427 26448 26484 26509 27174 27198 27961 28507 30232 30778 31016 31077 31084 31637 31667 31678 31682 31976 32030 32049 32052 32063 32116 32426 32952 33469 33471 33655 34189 34616 34618 35044 36509 36512 37292 37327 38485 39833 40342 40538 40767 41624 43538 43778 43825 44317 44848 44985 45049 46145 46959 47172 48285 52490 59741 60149)) nil ((modseq . "7378475") (uidvalidity . "600845545") (active 1 . 60252) (permanent-flags %Answered %Flagged %Draft %Deleted %Seen $NotPhishing $Phishing %*))))
+
+
+
+

@@ -1,0 +1,12 @@
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+# Load the tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased")
+
+# Tokenize input
+inputs = tokenizer("Hello, how are you?", return_tensors="pt")
+
+# Perform inference
+outputs = model(**inputs)
+print(outputs)
