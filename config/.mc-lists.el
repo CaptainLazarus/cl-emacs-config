@@ -4,8 +4,11 @@
 (setq mc/cmds-to-run-for-all
       '(
 	keyboard-escape-quit
+	multiple-cursors-mode
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	dap-tooltip-mouse-motion
+	lsp-signature-stop
 	))

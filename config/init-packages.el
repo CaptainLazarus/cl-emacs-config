@@ -38,11 +38,33 @@
   :ensure t)
 
 (use-package
+  spacemacs-theme
+  :ensure t)
+
+(use-package
   sicp
   :ensure t)
 
 (use-package
+  smart-comment
+  :ensure t
+  :bind ("M-;" . smart-comment))
+
+
+(use-package
   multiple-cursors
+  :ensure t)
+
+(use-package
+  magit
+  :ensure t)
+
+(use-package
+  rebecca-theme
+  :ensure t)
+
+(use-package
+  melancholy-theme
   :ensure t)
 
 (use-package
@@ -59,6 +81,21 @@
 (use-package
   slime
   :ensure t)
+
+(use-package
+  highlight-indent-guides
+  :ensure t)
+
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+
+(use-package
+  tuareg
+  :ensure t
+  :config
+  (add-hook 'tuareg-mode-hook
+          (lambda ()
+            (setq-local comment-start "(*")
+            (setq-local comment-end "*)"))))
 
 (use-package ob-racket
   :ensure (ob-racket :host github :repo "hasu/emacs-ob-racket"))
@@ -85,6 +122,7 @@
 (use-package lsp-mode
   :ensure t
   :hook (python-mode . lsp-deferred)
+  :hook (tuareg-mode . lsp-deferred)
   :config
   (require 'dap-python)
   (global-set-key (kbd "C-c r") 'lsp-find-references))

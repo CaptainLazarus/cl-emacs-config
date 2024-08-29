@@ -3,7 +3,10 @@
 (require 'init-core)
 (require 'init-packages)
 (require 'init-bindings)
+(require 'init-fonts)
 (require 'backup-config)
+(require 'erc-config)
+(require 'clipboard)
 ;; (require 'email-config)
 (with-eval-after-load 'org
   (require 'org-babel-config))
@@ -22,3 +25,4 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; (require 'opam-settings)
