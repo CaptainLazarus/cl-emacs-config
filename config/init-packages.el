@@ -37,7 +37,7 @@
   racket-mode
   :ensure t)
 
-(use-package
+(use-package 
   spacemacs-theme
   :ensure t)
 
