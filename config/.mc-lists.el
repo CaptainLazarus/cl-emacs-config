@@ -3,12 +3,15 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	end-of-buffer
 	keyboard-escape-quit
 	multiple-cursors-mode
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	beginning-of-buffer
 	dap-tooltip-mouse-motion
 	lsp-signature-stop
+	tuareg-eval-phrase
 	))

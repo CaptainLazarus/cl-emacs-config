@@ -50,6 +50,23 @@
   :ensure t
   :bind ("M-;" . smart-comment))
 
+(use-package
+  smartscan
+  :ensure t)
+
+(use-package
+  company
+  :ensure t)
+
+(use-package
+  merlin-company
+  :ensure t)
+
+(use-package
+  flycheck
+  :ensure t)
+
+;; (global-smartscan-mode t) ;; Turn on Smart Scan globally
 
 (use-package
   multiple-cursors
@@ -127,6 +144,13 @@
   (require 'dap-python)
   (global-set-key (kbd "C-c r") 'lsp-find-references))
 
+(use-package sudo-edit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c C-r") 'sudo-edit))
+
+;;(ac-config-default)
+(setq merlin-ac-setup 'easy)
 (require 'email-config)
 
 (provide 'init-packages)
