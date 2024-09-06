@@ -42,6 +42,10 @@
   :ensure t)
 
 (use-package
+  lavender-theme
+  :ensure t)
+
+(use-package
   sicp
   :ensure t)
 
@@ -52,6 +56,12 @@
 
 (use-package
   smartscan
+  :ensure t
+  :config
+  (global-smartscan-mode t))
+
+(use-package
+  org-journal
   :ensure t)
 
 (use-package
@@ -65,8 +75,6 @@
 (use-package
   flycheck
   :ensure t)
-
-;; (global-smartscan-mode t) ;; Turn on Smart Scan globally
 
 (use-package
   multiple-cursors

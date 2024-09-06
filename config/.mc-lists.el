@@ -4,8 +4,10 @@
 (setq mc/cmds-to-run-for-all
       '(
 	end-of-buffer
+	ivy-switch-buffer
 	keyboard-escape-quit
 	multiple-cursors-mode
+	save-buffers-kill-terminal
 	))
 
 (setq mc/cmds-to-run-once
