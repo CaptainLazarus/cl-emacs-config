@@ -4,16 +4,24 @@
 (setq mc/cmds-to-run-for-all
       '(
 	end-of-buffer
+	indent-for-tab-command
 	ivy-switch-buffer
 	keyboard-escape-quit
 	multiple-cursors-mode
+	my/mc-newline-and-indent
 	save-buffers-kill-terminal
+	wrap-in-brackets
+	wrap-lines-in-brackets
+	wrap-lines-with-brackets-or-strings
 	))
 
 (setq mc/cmds-to-run-once
       '(
 	beginning-of-buffer
 	dap-tooltip-mouse-motion
+	electric-newline-and-maybe-indent
+	ignore
 	lsp-signature-stop
 	tuareg-eval-phrase
+	wrap-in-parentheses
 	))

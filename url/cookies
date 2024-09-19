@@ -2,13 +2,36 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '((".openai.com"
+ '((".google.com"
+  [url-cookie "NID" "517=xdUg_cw3um3LKEjAQwpl1P5MhH7v4BczDOqc6eUHABWfPiGMvKqO8pCTy36hreUjQcLt3sFo2emBEfK5Q6K6eOf3P0pTDsXFfmy6ZKbZc-fQUiRH-1lu8M-ViD_KaL5ZZntdW-WnWUlQ7x1N_0WMv9IpTdcocjl3DmpGIu6yc7sY-zIXkX3NTnplkRT8MYQiWto" "Sun, 16-Mar-2025 21:08:41 GMT" "/" ".google.com" nil])
+ (".openai.com"
   [url-cookie "oai-did" "a4c25509-be4f-4f82-8295-492d2fe2ea99" "Fri May 09 02:39:49 2025 GMT" "/" ".openai.com" nil]))
 )
 (setq url-cookie-secure-storage
- 'nil)
-
+ '((".google.com"
+  [url-cookie "AEC" "AVYB7crSrHcDJV7E2hLLh6vCM59sZk9yPAVTfuX6kSk02O341EsXLk7NVQ" "Thu, 13-Mar-2025 21:09:37 GMT" "/" ".google.com" t])
+ (".reddit.com"
+  [url-cookie "loid" "0000000018sp88rgh7.2.1726348161564.Z0FBQUFBQm01ZnVCeDJsR0RYV3ItTXNxTV8yZm4yMG5ESWI5V2VobGp2cU9jc09RY3hqRklDNzJfclhFdXRBdDhnTkx0dEZudnlPU0dHaVFQR0hCNjFGVUNWZ0daOU15TTI1bHFwZUVxckx0SWYyTGEtaHhTaXRmTDVWN2t2Ti0zY0ExTVlDNGNYTG8" "Mon, 14 Sep 2026 21:09:21 GMT" "/" ".reddit.com" t]
+  [url-cookie "csv" "2" "Mon Sep 14 21:09:22 2026 GMT" "/" ".reddit.com" t])
+ ("reddit.com"
+  [url-cookie "edgebucket" "jZSXo7fTN8Po40EfJ1" "Mon Sep 14 21:09:20 2026 GMT" "/" "reddit.com" t]
+  [url-cookie "token_v2" "eyJhbGciOiJSUzI1NiIsImtpZCI6IlNIQTI1NjpzS3dsMnlsV0VtMjVmcXhwTU40cWY4MXE2OWFFdWFyMnpLMUdhVGxjdWNZIiwidHlwIjoiSldUIn0.eyJzdWIiOiJsb2lkIiwiZXhwIjoxNzI2NDM0NTYxLjU2NDMwNywiaWF0IjoxNzI2MzQ4MTYxLjU2NDMwNywianRpIjoiUm5YRVpPR3JkVElIbUFTUDFkLUEyQU5sc2ptV3B3IiwiY2lkIjoiMFItV0FNaHVvby1NeVEiLCJsaWQiOiJ0Ml8xOHNwODhyZ2g3IiwibGNhIjoxNzI2MzQ4MTYxNTY0LCJzY3AiOiJlSnhra2RHT3REQUloZC1sMXo3Ql95cF9OaHRzY1lhc0xRYW9rM243RFZvY2s3MDdjTDRpSFA4bktJcUZMRTJ1QktHa0tXRUZXdE9VTmlMdjU4eTlPWkVGU3lGVFI4NDN5d29rYVVwUFVtTjVweWxSd1daa0xsZmFzVUtEQjZZcFZTNloyMEtQUzV2UTNJMUZ6MDZNcWx4V0h0VFlvM0pwYkdNSzJ4UGp6Y1pxUXlxdXk2bE1ZRmtvbjhXTGZ2eUctdFktZjdiZmhIWXdyS2dLRF9UT3VGeHdZX0hERkhiX25wcjBiRjJ3cUwzWGc5US0xLU4yN2JObW9kbTVfVnpQdnphU2NUbUc1aWZZdjd0LUNSMTQ1SG1aVVFjd1lnMF95ckFqNl9Ddk9vREtCUVdNSlloUEk1QXJsMl9fSmRpdVRmOGF0eWQtLUdiRVRXXzRyUm1vNXhMRW9VX2o2emNBQVBfX1hEX2U0dyIsImZsbyI6MX0.gJfhcGe8_146X9PSnAPeNrZ0PUVJFkMr5LrjCOdSXGpl4QJnndbkbOM87OxOA3bQ_aQjH9E1kltf3F6ZnhvsxBPLAo6S3Nf0BRIhIp29K52ziA63s4Zs0Du8NVSX_E6wYUpqVX0CMgL8kk6zvOzIHabzXD6fzLE8Fn3RFdqdBaPJzWiXqrvEIiFdgqWbVNH8ZKMZpQd-P3RRPuOkWaMsiRJKUJsfPWQ4-7gY8G_39oHyoqDBg-a-o_g2L16fwtME1wGFcGvhW4QBWw38Ul55KkGeuF6FDwhDdcZwJVpAA13GWdZOQ2sxnQbuu6_iEF1Jbv45aBPMeXXiw5B4xX6NaQ" "Sun, 15 Sep 2024 21:09:21 GMT" "/" "reddit.com" t])
+ (".twitter.com"
+  [url-cookie "guest_id_marketing" "v1%3A172634832089083569" "Mon Sep 14 21:12:01 2026 GMT" "/" ".twitter.com" t]
+  [url-cookie "guest_id_ads" "v1%3A172634832089083569" "Mon Sep 14 21:12:01 2026 GMT" "/" ".twitter.com" t]
+  [url-cookie "personalization_id" "v1_n+vuJ44cCYmqWOfvdAb1IQ==" "Mon Sep 14 21:12:01 2026 GMT" "/" ".twitter.com" t]
+  [url-cookie "guest_id" "v1%3A172634832089083569" "Mon Sep 14 21:12:01 2026 GMT" "/" ".twitter.com" t])
+ (".x.com"
+  [url-cookie "guest_id_marketing" "v1%3A172634645104320615" "Mon Sep 14 20:40:51 2026 GMT" "/" ".x.com" t]
+  [url-cookie "guest_id_ads" "v1%3A172634645104320615" "Mon Sep 14 20:40:51 2026 GMT" "/" ".x.com" t]
+  [url-cookie "personalization_id" "v1_qEemiFqZ/JP74+mzS5fiwQ==" "Mon Sep 14 20:40:51 2026 GMT" "/" ".x.com" t]
+  [url-cookie "guest_id" "v1%3A172634645104320615" "Mon Sep 14 20:40:51 2026 GMT" "/" ".x.com" t]))
+)
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
+;; coding: utf-8-emacs-unix
 ;; End:
+
+;;; cookies ends here

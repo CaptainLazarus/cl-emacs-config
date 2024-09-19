@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/.emacs.d/elpaca/repos/emacs-direnv/" "~/projects/patch_anal/" "~/projects/STC/" "~/.emacs.d/config/ligature.el/" "~/projects/Iosevka/" "~/.emacs.d/elpaca/repos/slime/" "~/.emacs.d/elpaca/repos/sicp-info/")
+("~/.emacs.d/" "~/projects/ocaml_practice/" "~/projects/patch_anal/" "~/.emacs.d/elpaca/repos/emacs-direnv/" "~/projects/STC/" "~/.emacs.d/config/ligature.el/" "~/projects/Iosevka/" "~/.emacs.d/elpaca/repos/slime/" "~/.emacs.d/elpaca/repos/sicp-info/")

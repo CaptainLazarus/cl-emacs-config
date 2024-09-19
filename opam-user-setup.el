@@ -1,4 +1,4 @@
-;; ## added by OPAM user-setup for emacs / base ## cfd3c9b7837c85cffd0c59de521990f0 ## you can edit, but keep this line
+;; ## added by OPAM user-setup for emacs / base ## 6bcc7eb91f2a0005a1719b379c22ad99 ## you can edit, but keep this line
 (provide 'opam-user-setup)
 
 ;; Base configuration for OPAM
@@ -26,7 +26,7 @@
        (split-string (opam-shell-command-to-string "opam switch list -s --safe") "\n")
        nil t nil nil default))))
   (let* ((switch-arg (if (= 0 (length switch)) "" (concat "--switch " switch)))
-         (command (concat "opam config env --safe --sexp " switch-arg))
+         (command (concat "opam env --safe --sexp " switch-arg))
          (env (opam-shell-command-to-string command)))
     (when (and env (not (string= env "")))
       (dolist (var (car (read-from-string env)))
@@ -37,7 +37,7 @@
 (opam-update-env nil)
 
 (defvar opam-share
-  (let ((reply (opam-shell-command-to-string "opam config var share --safe")))
+  (let ((reply (opam-shell-command-to-string "opam var share --safe")))
     (when reply (substring reply 0 -1))))
 
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
@@ -95,12 +95,19 @@
   (autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
   (add-hook 'tuareg-mode-hook 'utop-minor-mode))
 
+(defun opam-setup-ocamlformat ()
+  (load (concat opam-share "/emacs/site-lisp/ocamlformat"))
+  (opam-setup-add-ocaml-hook
+    (lambda ()
+      (define-key tuareg-mode-map (kbd "C-c C-f") #'ocamlformat))))
+
 (defvar opam-tools
   '(("tuareg" . opam-setup-tuareg)
     ("ocp-indent" . opam-setup-ocp-indent)
     ("ocp-index" . opam-setup-ocp-index)
     ("merlin" . opam-setup-merlin)
-    ("utop" . opam-setup-utop)))
+    ("utop" . opam-setup-utop)
+    ("ocamlformat" . opam-setup-ocamlformat)))
 
 (defun opam-detect-installed-tools ()
   (let*
@@ -120,9 +127,9 @@
 
 (opam-auto-tools-setup)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
-;; ## added by OPAM user-setup for emacs / ocp-indent ## 370b5d2a658c6daad1ea47fb6fe01191 ## you can edit, but keep this line
+;; ## added by OPAM user-setup for emacs / ocp-indent ## ce4d6b2647f58eb012a022406dc30979 ## you can edit, but keep this line
 ;; Load ocp-indent from its original switch when not found in current switch
-(when (not (assoc "ocp-indent" opam-tools-installed))
+(when (not (member "ocp-indent" opam-tools-installed))
   (autoload 'ocp-setup-indent "/home/captainlazarus/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Tuareg mode")
   (autoload 'ocp-indent-caml-mode-setup "/home/captainlazarus/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Caml mode")
   (add-hook 'tuareg-mode-hook 'ocp-setup-indent t)
