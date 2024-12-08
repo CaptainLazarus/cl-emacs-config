@@ -1,4 +1,10 @@
 ;;; -*- lisp-data -*-
-(("/home/captainlazarus/projects/redux/")
+(("/home/captainlazarus/projects/patchparse4/")
+ ("/home/captainlazarus/projects/patch_anal/")
+ ("/home/captainlazarus/")
+ ("/home/captainlazarus/projects/tree-sitter/cocaml/")
+ ("/home/captainlazarus/projects/tree-sitter/ocaml-tree-sitter-core/")
+ ("/home/captainlazarus/.emacs.d/")
+ ("/home/captainlazarus/projects/redux/")
  ("/home/captainlazarus/projects/frontend/")
  ("/home/captainlazarus/leetcode-python/"))

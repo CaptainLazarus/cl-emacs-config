@@ -69,11 +69,26 @@
   :ensure t)
 
 (use-package
-  merlin-company
-  :ensure t)
+  flycheck
+  :ensure t
+  :config
+  (global-flycheck-mode 1))
+
+;; ;; Ensure Flycheck OCaml checker is defined after Flycheck and Elpaca are loaded
+;; (add-hook 'elpaca-after-init-hook
+;;           (lambda ()
+;;             (with-eval-after-load 'flycheck
+;;               (flycheck-define-checker ocaml
+;;                 "A syntax checker for OCaml using Merlin."
+;;                 :command ("merlin" "check" source-inplace)
+;;                 :error-patterns
+;;                 ((error line-start (file-name) ":" line ":" (message) line-end))
+;;                 :modes (tuareg-mode caml-mode))
+;;               (add-to-list 'flycheck-checkers 'ocaml))))
+
 
 (use-package
-  flycheck
+  flycheck-ocaml
   :ensure t)
 
 (use-package
@@ -82,6 +97,10 @@
 
 (use-package
   magit
+  :ensure t)
+
+(use-package
+  git-commit
   :ensure t)
 
 (use-package
@@ -113,6 +132,15 @@
 
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 
+(use-package merlin
+  :ensure t
+  :config
+  (add-hook 'tuareg-mode-hook #'merlin-mode))
+
+(use-package
+  merlin-company
+  :ensure t)
+
 (use-package
   tuareg
   :ensure t
@@ -120,7 +148,8 @@
   (add-hook 'tuareg-mode-hook
           (lambda ()
             (setq-local comment-start "(*")
-            (setq-local comment-end "*)"))))
+            (setq-local comment-end "*)")))
+  )
 
 (use-package ob-racket
   :ensure (ob-racket :host github :repo "hasu/emacs-ob-racket"))
@@ -157,8 +186,19 @@
   :config
   (global-set-key (kbd "C-c C-r") 'sudo-edit))
 
+(use-package xclip
+  :ensure t)
+
+(use-package dune
+  :ensure t)
+
+(use-package dune-format
+  :ensure t)
+
 ;;(ac-config-default)
 (setq merlin-ac-setup 'easy)
 (require 'email-config)
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+(define-key global-map (kbd "C-c h") hs-minor-mode-menu)
 
 (provide 'init-packages)

@@ -1,8 +1,13 @@
-;;; Custom keybindings
+;;; Custom Keybindings
+
+;;; Code:
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c d") (lambda ()
-                                (interactive)
-                                (delete-region (line-beginning-position) (line-beginning-position 2))))
+
+(global-set-key (kbd "C-c d")
+                (lambda ()
+                  (interactive)
+                  (delete-region (line-beginning-position)
+                                 (line-beginning-position 2))))
 
 (defun insert-racket-sicp-block ()
   "Insert a Racket code block with the SICP package."
@@ -12,6 +17,7 @@
   (end-of-line))
 
 (defun atom? (x)
+  "Check if X is an atom (non-list)."
   (not (listp x)))
 
 (defun move-line-up ()
@@ -32,32 +38,33 @@
     (move-to-column col)))
 
 (defun wrap-word-or-region-with-brackets (open close)
-  "Wrap the word at point or selected region with OPEN and CLOSE."
+  "Wrap the word at point or selected region with OPEN and CLOSE brackets."
   (interactive "sEnter opening bracket: \nsEnter closing bracket: ")
   (if (use-region-p)
-      ;; If a region is selected, wrap it
+      ;; Wrap selected region
       (let ((beg (region-beginning))
             (end (region-end)))
-        (goto-char end)
-        (insert close)
-        (goto-char beg)
-        (insert open)
-        (deactivate-mark))
-    ;; If no region is selected, wrap the word at point
-    (let ((bounds (bounds-of-thing-at-point 'word)))
+        (save-excursion
+          (goto-char end)
+          (insert close)
+          (goto-char beg)
+          (insert open)))
+    ;; Wrap word at point
+    (let ((bounds (bounds-of-thing-at-point 'symbol)))
       (if bounds
           (let ((beg (car bounds))
                 (end (cdr bounds)))
-            (goto-char end)
-            (insert close)
-            (goto-char beg)
-            (insert open))
-        ;; If there's no word, just insert a pair of brackets
+            (save-excursion
+              (goto-char end)
+              (insert close)
+              (goto-char beg)
+              (insert open)))
+        ;; Insert brackets and place cursor between them
         (insert open close)
         (backward-char)))))
 
 (defun wrap-lines-in-brackets (start end)
-  "Wrap each line in the region (or the whole buffer if no region is selected) in brackets."
+  "Wrap each line in the region with brackets."
   (interactive "r")
   (save-excursion
     (goto-char start)
@@ -69,7 +76,7 @@
       (forward-line 1))))
 
 (defun wrap-lines-with-brackets-or-strings (start end)
-  "Wrap each line in the region (or the whole buffer if no region is selected) with specific brackets or custom strings."
+  "Wrap each line in the region with specified brackets or custom strings."
   (interactive "r")
   (let* ((choice (read-char-choice "Choose: ( for (), [ for [], { for {}, or c for custom: " '(?\( ?\[ ?\{ ?c)))
          (open-string (cond
@@ -110,6 +117,7 @@
   "Wrap the word or region with curly braces."
   (interactive)
   (wrap-word-or-region-with-brackets "{" "}"))
+
 (defun jump-to-file-if-valid ()
   "Jump to the file at point if it exists."
   (interactive)
@@ -140,10 +148,11 @@
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-c C-t") 'treemacs)
+(global-set-key (kbd "C-c C-l") 'treemacs)
 (global-set-key (kbd "C-c w") 'wrap-lines-with-brackets-or-strings)
 (global-set-key (kbd "(") 'wrap-in-parentheses)
 (global-set-key (kbd "[") 'wrap-in-brackets)
 (global-set-key (kbd "{") 'wrap-in-braces)
+(global-set-key (kbd "S-<f6>") 'lsp-rename)
 
 (provide 'init-bindings)

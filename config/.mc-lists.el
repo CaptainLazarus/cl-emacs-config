@@ -7,12 +7,14 @@
 	indent-for-tab-command
 	ivy-switch-buffer
 	keyboard-escape-quit
+	kill-region
 	multiple-cursors-mode
 	my/mc-newline-and-indent
 	save-buffers-kill-terminal
 	wrap-in-brackets
 	wrap-lines-in-brackets
 	wrap-lines-with-brackets-or-strings
+	wrap-in-parentheses
 	))
 
 (setq mc/cmds-to-run-once
@@ -23,5 +25,4 @@
 	ignore
 	lsp-signature-stop
 	tuareg-eval-phrase
-	wrap-in-parentheses
 	))
